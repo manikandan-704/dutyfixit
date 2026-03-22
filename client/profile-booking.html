@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DutyFix IT - Select Professional</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header client-header">
+        <div class="logo-container" onclick="window.location.href='client-page.html'">
+            <i class="fas fa-tools logo-icon"></i>
+            <span class="logo-text">DutyFix IT</span>
+        </div>
+
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-menu-wrapper" id="navMenu">
+            <span class="user-email" id="userEmailDisplay">User</span>
+            <nav class="client-nav-links">
+                <a href="client-page.html" class="client-nav-link">Home</a>
+                <a href="mybooking.html" class="client-nav-link">My Bookings</a>
+            </nav>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <main class="profile-main">
+        <!-- Hero Section -->
+        <div class="service-hero">
+            <img id="serviceHeroImg" src="" alt="Service" class="service-hero-img">
+            <div class="service-hero-overlay">
+                <h1 class="hero-title" id="serviceTitle">Select a Professional</h1>
+                <p class="hero-subtitle">Choose the best expert for your needs</p>
+            </div>
+        </div>
+
+        <!-- City Filter -->
+        <div class="filter-container">
+            <label class="filter-label"><i class="fas fa-map-marker-alt icon-red-margin"></i>
+                Location:</label>
+            <select id="cityFilter" class="city-select">
+                <option value="">Select your City...</option>
+                <option value="Ariyalur">Ariyalur</option>
+                <option value="Chengalpattu">Chengalpattu</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Cuddalore">Cuddalore</option>
+                <option value="Dharmapuri">Dharmapuri</option>
+                <option value="Dindigul">Dindigul</option>
+                <option value="Erode">Erode</option>
+                <option value="Kallakurichi">Kallakurichi</option>
+                <option value="Kancheepuram">Kancheepuram</option>
+                <option value="Kanyakumari">Kanyakumari</option>
+                <option value="Karur">Karur</option>
+                <option value="Krishnagiri">Krishnagiri</option>
+                <option value="Madurai">Madurai</option>
+                <option value="Mayiladuthurai">Mayiladuthurai</option>
+                <option value="Nagapattinam">Nagapattinam</option>
+                <option value="Namakkal">Namakkal</option>
+                <option value="Nilgiris">Nilgiris</option>
+                <option value="Perambalur">Perambalur</option>
+                <option value="Pudukkottai">Pudukkottai</option>
+                <option value="Ramanathapuram">Ramanathapuram</option>
+                <option value="Ranipet">Ranipet</option>
+                <option value="Salem">Salem</option>
+                <option value="Sivaganga">Sivagangai</option>
+                <option value="Tenkasi">Tenkasi</option>
+                <option value="Thanjavur">Thanjavur</option>
+                <option value="Theni">Theni</option>
+                <option value="Thoothukudi">Thoothukudi</option>
+                <option value="Tiruchirappalli">Tiruchirappalli</option>
+                <option value="Tirunelveli">Tirunelveli</option>
+                <option value="Tirupathur">Tirupathur</option>
+                <option value="Tiruppur">Tiruppur</option>
+                <option value="Tiruvallur">Tiruvallur</option>
+                <option value="Tiruvannamalai">Tiruvannamalai</option>
+                <option value="Tiruvarur">Tiruvarur</option>
+                <option value="Vellore">Vellore</option>
+                <option value="Viluppuram">Viluppuram</option>
+                <option value="Virudhunagar">Virudhunagar</option>
+            </select>
+        </div>
+
+        <div class="workers-grid" id="workersGrid">
+            <!-- Workers will be loaded here -->
+            <div class="no-results">
+                <i class="fas fa-search search-placeholder-icon"></i>
+                <p>Please select your city to see available professionals.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Reviews Modal -->
+    <div id="reviewsModal" class="modal">
+        <div class="modal-content reviews-content">
+            <span class="close-modal" onclick="closeReviewsModal()">&times;</span>
+            <h2 id="modalWorkerName">Worker Reviews</h2>
+            <div id="modalReviewsList" class="reviews-list">
+                <p class="loading-text">Loading reviews...</p>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn" onclick="closeReviewsModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© 2025 DutyFixit. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/profile-booking.js"></script>
+</body>
+
+</html>

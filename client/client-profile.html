@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DutyFix IT - My Profile</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header client-header">
+        <div class="logo-container" onclick="window.location.href='client-page.html'">
+            <i class="fas fa-tools logo-icon"></i>
+            <span class="logo-text">DutyFix IT</span>
+        </div>
+
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-menu-wrapper" id="navMenu">
+            <span class="user-email" id="headerEmailDisplay">User</span>
+            <nav class="client-nav-links">
+                <a href="client-page.html" class="client-nav-link">Home</a>
+                <a href="client-profile.html" class="client-nav-link active">Profile</a>
+                <a href="mybooking.html" class="client-nav-link">My Bookings</a>
+            </nav>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar" id="profileAvatar">U</div>
+                <div class="profile-info">
+                    <h1 id="headerName">Loading...</h1>
+                    <p id="headerRole">Client Profile</p>
+                </div>
+            </div>
+
+            <form id="profileForm">
+                <div class="form-grid">
+                    <!-- Basic Details -->
+                    <div class="form-group full-width">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="profile-form-input" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="profile-form-input" id="email" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Mobile Number</label>
+                        <input type="tel" class="profile-form-input" id="mobile" placeholder="10-digit mobile number">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Date of Birth</label>
+                        <input type="date" class="profile-form-input" id="dob">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Gender</label>
+                        <select class="profile-form-input" id="gender">
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Address Section -->
+                    <div class="address-group">
+                        <div class="address-title"><i class="fas fa-map-marker-alt"></i> Address Details</div>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label class="form-label">Flat No / House No / Building</label>
+                                <input type="text" class="profile-form-input" id="flatNumber"
+                                    placeholder="e.g. Flat 402, Sunshine Apts">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">City</label>
+                                <input type="text" class="profile-form-input" id="city" placeholder="e.g. Chennai">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Pincode</label>
+                                <input type="text" class="profile-form-input" id="pincode" placeholder="e.g. 600001">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button type="button" class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i> Delete Account
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© 2025 DutyFixit. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/client-profile.js"></script>
+</body>
+
+</html>
